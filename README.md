@@ -27,6 +27,79 @@ This microservice has dependencies on the following microservices:
   - [HTTP Version 1](doc/HttpProtocolV1.md)
   - [Seneca Version 1](doc/SenecaProtocolV1.md)
 
+##  Contract
+
+Logical contract of the microservice is presented below. For physical implementation (HTTP/REST, Thrift, Seneca, Lambda, etc.),
+please, refer to documentation of the specific protocol.
+
+```typescript
+class GuideTypeV1 {
+    public static readonly Introduction = "introduction";
+    public static readonly NewRelease = "new release";
+}
+
+class GuideV1 implements IStringIdentifiable {
+    /* Identification */
+    public id: string;
+    public type: string;
+    public app?: string;
+    public version?: string;
+
+    /* Automatically managed fields */
+    public create_time: Date;
+
+    /* Content */
+    public pages: GuidePageV1[];
+
+    /* Search */
+    public tags?: string[];
+    public all_tags?: string[];
+
+    /* Status */
+    public status?: string;
+
+    /* Custom fields */
+    public custom_hdr?: any;
+    public custom_dat?: any;
+}
+
+class GuidePageV1 {
+    public title: MultiString;
+    public content?: MultiString;
+    public more_url?: string;
+    public color?: string;
+    public pic_id?: string;
+}
+
+class GuideStatusV1 {
+    public static readonly New = "new";
+    public static readonly Writing = "writing";
+    public static readonly Translating = "translating";
+    public static readonly Verifying = "verifying";
+    public static readonly Completed = "completed";
+}
+
+interface IGuidesV1 {
+    getGuides(correlationId: string, filter: FilterParams, paging: PagingParams,
+        callback: (err: any, page: DataPage<GuideV1>) => void): void;
+
+    getRandomGuide(correlationId: string, filter: FilterParams,
+        callback: (err: any, guide: GuideV1) => void): void;
+
+    getGuideById(correlationId: string, guideId: string,
+        callback: (err: any, guide: GuideV1) => void): void;
+
+    createGuide(correlationId: string, guide: GuideV1,
+        callback: (err: any, guide: GuideV1) => void): void;
+
+    updateGuide(correlationId: string, guide: GuideV1,
+        callback: (err: any, guide: GuideV1) => void): void;
+
+    deleteGuideById(correlationId: string, guideId: string,
+        callback: (err: any, guide: GuideV1) => void): void;
+}
+```
+
 ## Download
 
 Right now the only way to get the microservice is to check it out directly from github repository
