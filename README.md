@@ -131,9 +131,13 @@ Now the client is ready to perform operations
 client.createGuide(
     null,
     { 
-        category: 'maintenance',
-        title: { en: 'Maintenance on Jan 01' },
-        content: { en: 'Our servers will be shutdown for maintenance on Jan 01' }
+        type: 'introduction',
+        app: 'Test App 1',
+        pages: [
+            { 
+                title: { en: 'Welcome to Test App 1' } 
+            }
+        ]
     },
     function (err, guide) {
         ...
