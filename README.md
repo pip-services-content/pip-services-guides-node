@@ -1,10 +1,10 @@
 # Guides Microservice
 
-This is a system guides microservice from Pip.Services library. 
-It allows system administrators and product owners to communicate to users key system events and product updates.
+This is an application guides microservice from Pip.Services library. 
+It provides guidance to application users: introduces about application features, tells about new version and so on.
 Each guide:
 - Can be written in multiple languages
-- Can include pictures and document attachments
+- Can include one or more pages with title, text and a picture
 - Supports editing lifecycle via status tracking
 
 The microservice currently supports the following deployment options:
