@@ -8,7 +8,7 @@ import { GuidesController } from '../logic/GuidesController';
 import { GuidesHttpServiceV1 } from '../services/version1/GuidesHttpServiceV1';
 import { GuidesSenecaServiceV1 } from '../services/version1/GuidesSenecaServiceV1'; 
 
-export class GuidesFactory extends Factory {
+export class GuidesServiceFactory extends Factory {
 	public static Descriptor = new Descriptor("pip-services-guides", "factory", "default", "default", "1.0");
 	public static MemoryPersistenceDescriptor = new Descriptor("pip-services-guides", "persistence", "memory", "*", "1.0");
 	public static FilePersistenceDescriptor = new Descriptor("pip-services-guides", "persistence", "file", "*", "1.0");
@@ -19,12 +19,12 @@ export class GuidesFactory extends Factory {
 	
 	constructor() {
 		super();
-		this.registerAsType(GuidesFactory.MemoryPersistenceDescriptor, GuidesMemoryPersistence);
-		this.registerAsType(GuidesFactory.FilePersistenceDescriptor, GuidesFilePersistence);
-		this.registerAsType(GuidesFactory.MongoDbPersistenceDescriptor, GuidesMongoDbPersistence);
-		this.registerAsType(GuidesFactory.ControllerDescriptor, GuidesController);
-		this.registerAsType(GuidesFactory.SenecaServiceDescriptor, GuidesSenecaServiceV1);
-		this.registerAsType(GuidesFactory.HttpServiceDescriptor, GuidesHttpServiceV1);
+		this.registerAsType(GuidesServiceFactory.MemoryPersistenceDescriptor, GuidesMemoryPersistence);
+		this.registerAsType(GuidesServiceFactory.FilePersistenceDescriptor, GuidesFilePersistence);
+		this.registerAsType(GuidesServiceFactory.MongoDbPersistenceDescriptor, GuidesMongoDbPersistence);
+		this.registerAsType(GuidesServiceFactory.ControllerDescriptor, GuidesController);
+		this.registerAsType(GuidesServiceFactory.SenecaServiceDescriptor, GuidesSenecaServiceV1);
+		this.registerAsType(GuidesServiceFactory.HttpServiceDescriptor, GuidesHttpServiceV1);
 	}
 	
 }

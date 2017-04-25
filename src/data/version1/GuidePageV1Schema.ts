@@ -9,5 +9,6 @@ export class GuidePageV1Schema extends ObjectSchema {
         this.withOptionalProperty('more_url', TypeCode.String);
         this.withOptionalProperty('color', TypeCode.String);
         this.withOptionalProperty('pic_id', TypeCode.String);
+        this.withOptionalProperty('pic_uri', TypeCode.String);
     }
 }

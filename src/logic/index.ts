@@ -1,2 +1,2 @@
-export { IGuidesBusinessLogic } from './IGuidesBusinessLogic';
+export { IGuidesController } from './IGuidesController';
 export { GuidesController } from './GuidesController';

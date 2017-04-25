@@ -19,11 +19,11 @@ import { IAttachmentsClientV1 } from 'pip-clients-attachments-node';
 import { GuidePageV1 } from '../data/version1/GuidePageV1';
 import { GuideV1 } from '../data/version1/GuideV1';
 import { IGuidesPersistence } from '../persistence/IGuidesPersistence';
-import { IGuidesBusinessLogic } from './IGuidesBusinessLogic';
+import { IGuidesController } from './IGuidesController';
 import { GuidesCommandSet } from './GuidesCommandSet';
 import { AttachmentsConnector } from './AttachmentsConnector';
 
-export class GuidesController implements IConfigurable, IReferenceable, ICommandable, IGuidesBusinessLogic {
+export class GuidesController implements IConfigurable, IReferenceable, ICommandable, IGuidesController {
     private static _defaultConfig: ConfigParams = ConfigParams.fromTuples(
         'dependencies.persistence', 'pip-services-guides:persistence:*:*:1.0',
         'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0'

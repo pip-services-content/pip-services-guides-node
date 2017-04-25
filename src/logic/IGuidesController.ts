@@ -5,7 +5,7 @@ import { DataPage } from 'pip-services-commons-node';
 import { GuidePageV1 } from '../data/version1/GuidePageV1';
 import { GuideV1 } from '../data/version1/GuideV1';
 
-export interface IGuidesBusinessLogic {
+export interface IGuidesController {
     getGuides(correlationId: string, filter: FilterParams, paging: PagingParams,
         callback: (err: any, page: DataPage<GuideV1>) => void): void;
 

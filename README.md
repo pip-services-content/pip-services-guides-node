@@ -69,6 +69,7 @@ class GuidePageV1 {
     public more_url?: string;
     public color?: string;
     public pic_id?: string;
+    public pic_url?: string;
 }
 
 class GuideStatusV1 {

@@ -13,12 +13,12 @@ import { PagingParamsSchema } from 'pip-services-commons-node';
 import { GuideV1 } from '../data/version1/GuideV1';
 import { GuidePageV1Schema } from '../data/version1/GuidePageV1Schema';
 import { GuideV1Schema } from '../data/version1/GuideV1Schema';
-import { IGuidesBusinessLogic } from './IGuidesBusinessLogic';
+import { IGuidesController } from './IGuidesController';
 
 export class GuidesCommandSet extends CommandSet {
-    private _logic: IGuidesBusinessLogic;
+    private _logic: IGuidesController;
 
-	constructor(logic: IGuidesBusinessLogic) {
+	constructor(logic: IGuidesController) {
 		super();
 
 		this._logic = logic;

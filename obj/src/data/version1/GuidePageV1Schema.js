@@ -10,6 +10,7 @@ class GuidePageV1Schema extends pip_services_commons_node_1.ObjectSchema {
         this.withOptionalProperty('more_url', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('color', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('pic_id', pip_services_commons_node_2.TypeCode.String);
+        this.withOptionalProperty('pic_uri', pip_services_commons_node_2.TypeCode.String);
     }
 }
 exports.GuidePageV1Schema = GuidePageV1Schema;

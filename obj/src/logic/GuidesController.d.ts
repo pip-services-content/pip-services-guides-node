@@ -8,8 +8,8 @@ import { DataPage } from 'pip-services-commons-node';
 import { ICommandable } from 'pip-services-commons-node';
 import { CommandSet } from 'pip-services-commons-node';
 import { GuideV1 } from '../data/version1/GuideV1';
-import { IGuidesBusinessLogic } from './IGuidesBusinessLogic';
-export declare class GuidesController implements IConfigurable, IReferenceable, ICommandable, IGuidesBusinessLogic {
+import { IGuidesController } from './IGuidesController';
+export declare class GuidesController implements IConfigurable, IReferenceable, ICommandable, IGuidesController {
     private static _defaultConfig;
     private _dependencyResolver;
     private _persistence;

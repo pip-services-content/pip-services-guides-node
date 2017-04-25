@@ -11,6 +11,7 @@ exports.GuidesMongoDbSchema = function (collection) {
         more_url: { type: String, required: false },
         color: { type: String, required: false },
         pic_id: { type: String, required: false },
+        pic_uri: { type: String, required: false },
         /* Custom fields */
         custom_dat: { type: Mixed, required: false }
     });

@@ -1,8 +1,8 @@
 import { CommandSet } from 'pip-services-commons-node';
-import { IGuidesBusinessLogic } from './IGuidesBusinessLogic';
+import { IGuidesController } from './IGuidesController';
 export declare class GuidesCommandSet extends CommandSet {
     private _logic;
-    constructor(logic: IGuidesBusinessLogic);
+    constructor(logic: IGuidesController);
     private makeGetGuidesCommand();
     private makeGetRandomGuideCommand();
     private makeGetGuideByIdCommand();

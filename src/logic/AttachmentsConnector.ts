@@ -16,7 +16,8 @@ export class AttachmentsConnector {
         let ids: string[] = [];
 
         _.each(guide.pages, (page) => {
-            ids.push(page.pic_id);
+            if (page.pic_id)
+                ids.push(page.pic_id);
         });
 
         return ids;
