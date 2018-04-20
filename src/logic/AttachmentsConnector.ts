@@ -1,7 +1,6 @@
 let _ = require('lodash');
 
 import { ReferenceV1 } from 'pip-clients-attachments-node';
-import { AttachmentV1 } from 'pip-clients-attachments-node';
 import { IAttachmentsClientV1 } from 'pip-clients-attachments-node';
 
 import { GuideV1 } from '../data/version1/GuideV1';

@@ -37,9 +37,9 @@ export class GuidesMongoDbPersistence
         if (app != null)
             criteria.push({ app: app });
 
-        let version = filter.getAsNullableString('version');
-        if (version != null)
-            criteria.push({ version: version });
+        let name = filter.getAsNullableString('name');
+        if (name != null)
+            criteria.push({ name: name });
 
         let status = filter.getAsNullableString('status');
         if (status != null)

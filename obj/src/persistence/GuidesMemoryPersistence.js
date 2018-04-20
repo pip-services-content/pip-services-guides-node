@@ -23,7 +23,7 @@ class GuidesMemoryPersistence extends pip_services_data_node_1.IdentifiableMemor
         let id = filter.getAsNullableString('id');
         let type = filter.getAsNullableString('type');
         let app = filter.getAsNullableString('app');
-        let version = filter.getAsNullableString('version');
+        let name = filter.getAsNullableString('name');
         let status = filter.getAsNullableString('status');
         let tagsString = filter.get('tags');
         let tags = tagsString != null ? pip_services_commons_node_2.TagsProcessor.compressTags(tagsString) : null;
@@ -34,7 +34,7 @@ class GuidesMemoryPersistence extends pip_services_data_node_1.IdentifiableMemor
                 return false;
             if (app != null && app != item.app)
                 return false;
-            if (version != null && version != item.version)
+            if (name != null && name != item.name)
                 return false;
             if (status != null && status != item.status)
                 return false;

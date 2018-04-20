@@ -12,7 +12,10 @@ export class GuideV1Schema extends ObjectSchema {
         this.withOptionalProperty('id', TypeCode.String);
         this.withRequiredProperty('type', TypeCode.String);
         this.withOptionalProperty('app', TypeCode.String);
-        this.withOptionalProperty('version', TypeCode.String);
+        this.withOptionalProperty('name', TypeCode.String);
+
+        this.withOptionalProperty('min_ver', TypeCode.Integer);
+        this.withOptionalProperty('max_ver', TypeCode.Integer);
 
         /* Generic request properties */
         this.withOptionalProperty('create_time', null); //TypeCode.DateTime);

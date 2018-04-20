@@ -11,27 +11,33 @@ import { GuidePageV1 } from '../../src/data/version1/GuidePageV1';
 
 let GUIDE1 = <GuideV1>{
     id: '1',
+    name: 'Name1',
     type: 'introduction',
     app: 'Test App 1',
-    version: null,
+    max_ver: null,
+    min_ver: null,
     status: 'new'
 };
 let GUIDE2 = <GuideV1>{
     id: '2',
+    name: 'Name2',
     tags: ['TAG 1'],
     all_tags: ['tag1'],
     type: 'new release',
     app: 'Test App 1',
-    version: '1.0',
+    max_ver: 1,
+    min_ver: 2,
     status: 'new'
 };
 let GUIDE3 = <GuideV1>{
     id: '3',
+    name: 'Name3',
     tags: ['Tag 1', 'tag 2'],
     all_tags: ['tag1', 'tag2'],
     type: 'new release',
     app: 'Test App 2',
-    version: '1.1',
+    max_ver: 1,
+    min_ver: 3,
     status: 'translating'
 };
 
@@ -200,7 +206,7 @@ export class GuidesPersistenceFixture {
                     FilterParams.fromValue({
                         type: GUIDE3.type,
                         app: GUIDE3.app,
-                        version: GUIDE3.version
+                        name: GUIDE3.name
                     }),
                     new PagingParams(),
                     (err, guides) => {

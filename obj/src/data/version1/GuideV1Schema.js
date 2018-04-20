@@ -11,7 +11,9 @@ class GuideV1Schema extends pip_services_commons_node_1.ObjectSchema {
         this.withOptionalProperty('id', pip_services_commons_node_3.TypeCode.String);
         this.withRequiredProperty('type', pip_services_commons_node_3.TypeCode.String);
         this.withOptionalProperty('app', pip_services_commons_node_3.TypeCode.String);
-        this.withOptionalProperty('version', pip_services_commons_node_3.TypeCode.String);
+        this.withOptionalProperty('name', pip_services_commons_node_3.TypeCode.String);
+        this.withOptionalProperty('min_ver', pip_services_commons_node_3.TypeCode.Integer);
+        this.withOptionalProperty('max_ver', pip_services_commons_node_3.TypeCode.Integer);
         /* Generic request properties */
         this.withOptionalProperty('create_time', null); //TypeCode.DateTime);
         /* Content */

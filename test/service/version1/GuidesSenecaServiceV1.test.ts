@@ -17,18 +17,22 @@ import { GuidesSenecaServiceV1 } from '../../../src/services/version1/GuidesSene
 
 let GUIDE1 = <GuideV1>{
     id: '1',
+    name: 'Name1',
     type: 'introduction',
     app: 'Test App 1',
-    version: null,
+    max_ver: null,
+    min_ver: null,
     status: 'new'
 };
 let GUIDE2 = <GuideV1>{
     id: '2',
+    name: 'Name2',
     tags: ['TAG 1'],
     all_tags: ['tag1'],
     type: 'new release',
     app: 'Test App 1',
-    version: '1.0',
+    max_ver: 1,
+    min_ver: 2,
     status: 'new'
 };
 
