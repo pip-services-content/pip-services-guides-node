@@ -79,7 +79,7 @@ suite('GuidesHttpServiceV1', ()=> {
         async.series([
         // Create one guide
             (callback) => {
-                rest.post('/guides/create_guide',
+                rest.post('/v1/guides/create_guide',
                     {
                         guide: GUIDE1
                     },
@@ -98,7 +98,7 @@ suite('GuidesHttpServiceV1', ()=> {
             },
         // Create another guide
             (callback) => {
-                rest.post('/guides/create_guide',
+                rest.post('/v1/guides/create_guide',
                     {
                         guide: GUIDE2
                     },
@@ -117,7 +117,7 @@ suite('GuidesHttpServiceV1', ()=> {
             },
         // Get all guides
             (callback) => {
-                rest.post('/guides/get_guides',
+                rest.post('/v1/guides/get_guides',
                     {},
                     (err, req, res, page) => {
                         assert.isNull(err);
@@ -133,7 +133,7 @@ suite('GuidesHttpServiceV1', ()=> {
             (callback) => {
                 guide1.app = 'New App 1';
 
-                rest.post('/guides/update_guide',
+                rest.post('/v1/guides/update_guide',
                     {
                         guide: guide1
                     },
@@ -152,7 +152,7 @@ suite('GuidesHttpServiceV1', ()=> {
             },
         // Delete guide
             (callback) => {
-                rest.post('/guides/delete_guide_by_id',
+                rest.post('/v1/guides/delete_guide_by_id',
                     {
                         guide_id: guide1.id
                     },
@@ -165,7 +165,7 @@ suite('GuidesHttpServiceV1', ()=> {
             },
         // Try to get delete guide
             (callback) => {
-                rest.post('/guides/get_guide_by_id',
+                rest.post('/v1/guides/get_guide_by_id',
                     {
                         guide_id: guide1.id
                     },
