@@ -37,7 +37,7 @@ class GuidesController {
     createGuide(correlationId, guide, callback) {
         let newGuide = null;
         guide.create_time = new Date();
-        guide.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags(guide, 'title.en', 'title.sp', 'title.fr', 'title.de', 'title.ru', 'content.en', 'content.sp', 'content.fr', 'content.de', 'content.ru');
+        guide.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru');
         async.series([
             (callback) => {
                 this._persistence.create(correlationId, guide, (err, data) => {
@@ -55,7 +55,7 @@ class GuidesController {
     updateGuide(correlationId, guide, callback) {
         let oldGuide = null;
         let newGuide = null;
-        guide.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags(guide, 'title.en', 'title.sp', 'title.fr', 'title.de', 'title.ru', 'content.en', 'content.sp', 'content.fr', 'content.de', 'content.ru');
+        guide.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru');
         async.series([
             (callback) => {
                 this._persistence.getOneById(correlationId, guide.id, (err, data) => {

@@ -40,7 +40,7 @@ export class GuidesMemoryPersistence
         let name = filter.getAsNullableString('name');
         let status = filter.getAsNullableString('status');
         let tagsString = filter.get('tags');
-        let tags = tagsString != null ? TagsProcessor.compressTags(tagsString) : null;
+        let tags = tagsString != null ? TagsProcessor.compressTags([tagsString]) : null;
 
         return (item: GuideV1) => {
             if (id != null && id != item.id)

@@ -74,9 +74,7 @@ export class GuidesController implements IConfigurable, IReferenceable, ICommand
 
         guide.create_time = new Date();
         guide.all_tags = TagsProcessor.extractHashTags(
-            guide, 
-            'title.en', 'title.sp', 'title.fr', 'title.de', 'title.ru',
-            'content.en', 'content.sp', 'content.fr', 'content.de', 'content.ru'
+            '#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru'
         );
 
         async.series([
@@ -100,9 +98,7 @@ export class GuidesController implements IConfigurable, IReferenceable, ICommand
         let newGuide: GuideV1 = null;
         
         guide.all_tags = TagsProcessor.extractHashTags(
-            guide, 
-            'title.en', 'title.sp', 'title.fr', 'title.de', 'title.ru',
-            'content.en', 'content.sp', 'content.fr', 'content.de', 'content.ru'
+            '#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru'
         );
 
         async.series([

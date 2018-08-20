@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
 const pip_services_commons_node_1 = require("pip-services-commons-node");
 const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_data_node_1 = require("pip-services-data-node");
+const pip_services_mongodb_node_1 = require("pip-services-mongodb-node");
 const GuidesMongoDbSchema_1 = require("./GuidesMongoDbSchema");
-class GuidesMongoDbPersistence extends pip_services_data_node_1.IdentifiableMongoDbPersistence {
+class GuidesMongoDbPersistence extends pip_services_mongodb_node_1.IdentifiableMongoDbPersistence {
     constructor() {
         super('guides', GuidesMongoDbSchema_1.GuidesMongoDbSchema());
     }
@@ -30,7 +30,7 @@ class GuidesMongoDbPersistence extends pip_services_data_node_1.IdentifiableMong
         // Search by tags
         let tags = filter.getAsObject('tags');
         if (tags) {
-            let searchTags = pip_services_commons_node_2.TagsProcessor.compressTags(tags);
+            let searchTags = pip_services_commons_node_2.TagsProcessor.compressTags([tags]);
             criteria.push({ all_tags: { $in: searchTags } });
         }
         return criteria.length > 0 ? { $and: criteria } : {};
