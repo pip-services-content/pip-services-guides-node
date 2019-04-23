@@ -1,4 +1,4 @@
-import { MultiString } from 'pip-services-commons-node';
+import { MultiString } from 'pip-services3-commons-node';
 export declare class GuidePageV1 {
     constructor(title: MultiString, content?: MultiString, moreUrl?: string, color?: string, picId?: string, picUri?: string);
     title: MultiString;

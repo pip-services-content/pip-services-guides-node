@@ -3,10 +3,10 @@ let async = require('async');
 let restify = require('restify');
 let assert = require('chai').assert;
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { Descriptor } from 'pip-services-commons-node';
-import { References } from 'pip-services-commons-node';
-import { MultiString } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { References } from 'pip-services3-commons-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 import { GuidePageV1 } from '../../../src/data/version1/GuidePageV1';
 import { GuideV1 } from '../../../src/data/version1/GuideV1';

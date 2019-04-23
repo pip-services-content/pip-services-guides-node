@@ -1,5 +1,5 @@
-import { IStringIdentifiable } from 'pip-services-commons-node';
-import { MultiString } from 'pip-services-commons-node';
+import { IStringIdentifiable } from 'pip-services3-commons-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 import { GuidePageV1 } from './GuidePageV1';
 

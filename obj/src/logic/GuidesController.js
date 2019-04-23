@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let async = require('async');
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_commons_node_3 = require("pip-services-commons-node");
-const pip_services_commons_node_4 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_commons_node_3 = require("pip-services3-commons-node");
+const pip_services3_commons_node_4 = require("pip-services3-commons-node");
 const GuidesCommandSet_1 = require("./GuidesCommandSet");
 const AttachmentsConnector_1 = require("./AttachmentsConnector");
 class GuidesController {
     constructor() {
-        this._dependencyResolver = new pip_services_commons_node_2.DependencyResolver(GuidesController._defaultConfig);
+        this._dependencyResolver = new pip_services3_commons_node_2.DependencyResolver(GuidesController._defaultConfig);
     }
     configure(config) {
         this._dependencyResolver.configure(config);
@@ -37,7 +37,7 @@ class GuidesController {
     createGuide(correlationId, guide, callback) {
         let newGuide = null;
         guide.create_time = new Date();
-        guide.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru');
+        guide.all_tags = pip_services3_commons_node_3.TagsProcessor.extractHashTags('#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru');
         async.series([
             (callback) => {
                 this._persistence.create(correlationId, guide, (err, data) => {
@@ -55,13 +55,13 @@ class GuidesController {
     updateGuide(correlationId, guide, callback) {
         let oldGuide = null;
         let newGuide = null;
-        guide.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru');
+        guide.all_tags = pip_services3_commons_node_3.TagsProcessor.extractHashTags('#title.en#title.sp#title.fr#title.de#title.ru#content.en#content.sp#content.fr#content.de#content.ru');
         async.series([
             (callback) => {
                 this._persistence.getOneById(correlationId, guide.id, (err, data) => {
                     oldGuide = data;
                     if (err == null && data == null) {
-                        err = new pip_services_commons_node_4.NotFoundException(correlationId, 'GUIDE_NOT_FOUND', 'Guide ' + guide.id + ' was not found').withDetails('guide_id', guide.id);
+                        err = new pip_services3_commons_node_4.NotFoundException(correlationId, 'GUIDE_NOT_FOUND', 'Guide ' + guide.id + ' was not found').withDetails('guide_id', guide.id);
                     }
                     callback(err);
                 });
@@ -96,6 +96,6 @@ class GuidesController {
         });
     }
 }
-GuidesController._defaultConfig = pip_services_commons_node_1.ConfigParams.fromTuples('dependencies.persistence', 'pip-services-guides:persistence:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
+GuidesController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence', 'pip-services-guides:persistence:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
 exports.GuidesController = GuidesController;
 //# sourceMappingURL=GuidesController.js.map

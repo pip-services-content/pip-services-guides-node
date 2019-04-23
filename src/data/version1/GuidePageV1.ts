@@ -1,4 +1,4 @@
-import { MultiString } from 'pip-services-commons-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 export class GuidePageV1 {
 
