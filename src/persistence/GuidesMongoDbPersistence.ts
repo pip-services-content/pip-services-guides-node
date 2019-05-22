@@ -5,19 +5,19 @@ import { PagingParams } from 'pip-services3-commons-node';
 import { DataPage } from 'pip-services3-commons-node';
 import { AnyValueMap } from 'pip-services3-commons-node';
 import { TagsProcessor } from 'pip-services3-commons-node';
-import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-node';
+import { IdentifiableMongoosePersistence } from 'pip-services3-mongoose-node';
 
 import { GuidePageV1 } from '../data/version1/GuidePageV1';
 import { GuideV1 } from '../data/version1/GuideV1';
 import { IGuidesPersistence } from './IGuidesPersistence';
-import { GuidesMongoDbSchema } from './GuidesMongoDbSchema';
+import { GuidesMongooseSchema } from './GuidesMongooseSchema';
 
 export class GuidesMongoDbPersistence 
-    extends IdentifiableMongoDbPersistence<GuideV1, string> 
+    extends IdentifiableMongoosePersistence<GuideV1, string> 
     implements IGuidesPersistence {
 
     constructor() {
-        super('guides', GuidesMongoDbSchema());
+        super('guides', GuidesMongooseSchema());
     }
 
     private composeFilter(filter: FilterParams): any {
