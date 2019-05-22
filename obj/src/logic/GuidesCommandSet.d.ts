@@ -3,10 +3,10 @@ import { IGuidesController } from './IGuidesController';
 export declare class GuidesCommandSet extends CommandSet {
     private _logic;
     constructor(logic: IGuidesController);
-    private makeGetGuidesCommand;
-    private makeGetRandomGuideCommand;
-    private makeGetGuideByIdCommand;
-    private makeCreateGuideCommand;
-    private makeUpdateGuideCommand;
-    private makeDeleteGuideByIdCommand;
+    private makeGetGuidesCommand();
+    private makeGetRandomGuideCommand();
+    private makeGetGuideByIdCommand();
+    private makeCreateGuideCommand();
+    private makeUpdateGuideCommand();
+    private makeDeleteGuideByIdCommand();
 }
