@@ -17,11 +17,11 @@ class GuidesServiceFactory extends pip_services3_components_node_1.Factory {
         this.registerAsType(GuidesServiceFactory.HttpServiceDescriptor, GuidesHttpServiceV1_1.GuidesHttpServiceV1);
     }
 }
+exports.GuidesServiceFactory = GuidesServiceFactory;
 GuidesServiceFactory.Descriptor = new pip_services3_commons_node_1.Descriptor("pip-services-guides", "factory", "default", "default", "1.0");
 GuidesServiceFactory.MemoryPersistenceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-guides", "persistence", "memory", "*", "1.0");
 GuidesServiceFactory.FilePersistenceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-guides", "persistence", "file", "*", "1.0");
 GuidesServiceFactory.MongoDbPersistenceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-guides", "persistence", "mongodb", "*", "1.0");
 GuidesServiceFactory.ControllerDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-guides", "controller", "default", "*", "1.0");
 GuidesServiceFactory.HttpServiceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-guides", "service", "http", "*", "1.0");
-exports.GuidesServiceFactory = GuidesServiceFactory;
 //# sourceMappingURL=GuidesServiceFactory.js.map

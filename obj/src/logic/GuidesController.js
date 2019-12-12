@@ -96,6 +96,6 @@ class GuidesController {
         });
     }
 }
-GuidesController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence', 'pip-services-guides:persistence:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
 exports.GuidesController = GuidesController;
+GuidesController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence', 'pip-services-guides:persistence:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
 //# sourceMappingURL=GuidesController.js.map
